@@ -22,6 +22,7 @@ public class UserClient {
 				Timestamp.valueOf(LocalDateTime.now()));
 		UserDetailsService service = new UserDetailsServiceJdbcImpl();
 		System.out.println(service.getDetails());
+		System.out.println(service.getTopNUsers(2));
 		
 	}
 }
