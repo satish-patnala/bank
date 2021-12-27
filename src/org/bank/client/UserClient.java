@@ -4,6 +4,9 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 import org.bank.domain.UserDetails;
+import org.bank.service.UserDetailsService;
+import org.bank.service.UserDetailsServiceJdbcImpl;
+import org.bank.util.UserDetailsUtil;
 
 public class UserClient {
 	public static void main(String[] args) {
@@ -17,7 +20,8 @@ public class UserClient {
 				Timestamp.valueOf(LocalDateTime.now()));
 		UserDetails user5 = new UserDetails("1234345456", "anil", "savings", 3400, "bnglre", 34,
 				Timestamp.valueOf(LocalDateTime.now()));
-		
+		UserDetailsService service = new UserDetailsServiceJdbcImpl();
+		System.out.println(service.getDetails());
 		
 	}
 }
