@@ -20,9 +20,8 @@ public class UserClient {
 				Timestamp.valueOf(LocalDateTime.now()));
 		UserDetails user5 = new UserDetails("1234345456", "anil", "savings", 3400, "bnglre", 34,
 				Timestamp.valueOf(LocalDateTime.now()));
-		UserDetailsService service = new UserDetailsServiceJdbcImpl();
-		System.out.println(service.getDetails());
-		System.out.println(service.getTopNUsers(2));
+		UserDetailsServiceJdbcImpl service = new UserDetailsServiceJdbcImpl();
+		System.out.println(service.joinTables());
 		
 	}
 }
