@@ -1,5 +1,6 @@
 package org.bank.service;
 
+import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 
@@ -92,6 +93,10 @@ public class UserDetailsServiceJdbcImpl implements UserDetailsService {
 	public List<UserDetails> patternMatch(String str) {
 		List<UserDetails> list = userUtil.matchByNamePattern(str);
 		return list;
+	}
+	
+	public ResultSet joinTables() {
+		return userUtil.joinTwoTables();
 	}
 
 }

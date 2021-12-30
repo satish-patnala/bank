@@ -224,4 +224,16 @@ public class UserDetailsUtil {
 		}
 		return null;
 	}
+	
+	public ResultSet joinTwoTables() {
+		getConnection();
+		try {
+			preStmt = con.prepareStatement("select * from user_info u, tx_details t where u.useracno=t.acntno ");
+			ResultSet rs = preStmt.executeQuery();
+			return rs;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
